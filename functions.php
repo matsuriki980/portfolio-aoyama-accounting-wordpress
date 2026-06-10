@@ -69,10 +69,11 @@ add_filter(
   2
 );
 
-// タイトルを自動生成する
+//  管理画面をカスタマイズ
 function my_theme_setup()
 {
-  add_theme_support('title-tag');
+  add_theme_support('title-tag'); // WordPress側でタイトルを自動生成
+  add_theme_support('post-thumbnails'); // アイキャッチ画像を追加する
 }
 
 add_action(
