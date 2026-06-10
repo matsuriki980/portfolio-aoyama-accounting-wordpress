@@ -1,0 +1,17 @@
+@use "../../../global" as g;
+@use "../../../mixin/mixin" as m;
+
+/*!
+ contact > thanks
+------------------------------
+ */
+
+// btn
+.thanks__btn {
+  display: block;
+  margin-top: 40rem;
+
+  @include g.mq() {
+    margin-top: 56rem;
+  }
+}

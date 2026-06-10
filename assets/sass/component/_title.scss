@@ -1,0 +1,57 @@
+@use "../global" as g;
+@use "../mixin/mixin" as m;
+
+/*!
+ component > title
+------------------------------
+*/
+.c-title__wrap {
+}
+
+.c-title {
+  color: currentColor;
+}
+
+.c-title--ja {
+  @include m.font-size($font-size: 16, $line-height: 42);
+  @include m.font-family-base($weight: "Medium");
+  display: flex;
+  gap: 15rem;
+  align-items: center;
+
+  // □の装飾
+  &::before {
+    content: "";
+    display: block;
+    width: 15rem;
+    aspect-ratio: 1/1;
+    background-color: var(--color-accent-primary);
+  }
+}
+
+.c-title--en {
+  @include m.font-family-en($weight: "ExtraLight");
+  @include m.letter-spacing($letter-spacing: -5);
+  text-transform: capitalize;
+  line-height: 1;
+  position: relative;
+
+  // 上下に配置する装飾線の設定
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 0.5px;
+    position: absolute;
+    background-color: var(--color-bg-primary);
+    opacity: 0.25;
+  }
+}
+
+.c-title--base {
+  @include m.font-size($font-size: 64, $line-height: 59);
+
+  @include g.mq() {
+  @include m.font-size($font-size: 110, $line-height: 105);
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../global" as g;
+@use "../../mixin/mixin" as m;
+
+/*!
+ component > contact > contact-item
+ ------------------------------
+*/
+
+.c-form__item-head {
+  @include m.font-family-base($weight: "Medium");
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  font-size: 18rem;
+  line-height: 2;
+  @include m.letter-spacing(8);
+}
+
+.c-form__required {
+  font-size: 12rem;
+  line-height: 2;
+  @include m.letter-spacing(8);
+  color: #f03341;
+}
+
+.c-form__text {
+  line-height: 2;
+  @include m.letter-spacing(8);
+}

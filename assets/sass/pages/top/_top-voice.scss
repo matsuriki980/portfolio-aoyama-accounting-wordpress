@@ -1,0 +1,120 @@
+@use "../../global" as g;
+@use "../../mixin/mixin" as m;
+
+/*!
+ top > top-voice
+------------------------------
+ */
+.top-voice {
+  background-color: var(--color-bg-primary);
+  color: var(--color-white);
+
+  // step状の装飾画像をセクション上部に配置
+  @include g.mq() {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 960rem;
+      height: 60rem;
+      top: -60rem;
+      left: 0;
+      @include m.background-img($size: cover ,$position: initial);
+      background-image: url(../img/top/top-voice-step.svg);
+    }
+  }
+}
+
+.top-voice__inner {
+  padding-block: 60rem;
+
+  @include g.mq() {
+    padding-block: 180rem 150rem;
+    padding-inline: 30rem;
+  }
+}
+
+.top-voice__body {
+  @include g.mq() {
+    display: flex;
+  }
+}
+
+.top-voice__content {
+  padding-inline: 30rem;
+
+  @include g.mq() {
+    border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    padding: 90rem 48rem 60rem 90rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 450rem;
+  }
+}
+
+.top-voice__title--en {
+  font-size: 64rem;
+
+  @include g.mq() {
+    font-size: 76rem;
+  }
+
+  span {
+    @include m.letter-spacing(-3);
+  }
+}
+
+.top-voice__btn-arrow-wrap {
+  @include g.mq() {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+  }
+}
+
+.top-voice__btn-arrow {
+  opacity: 0.3;
+  transition: opacity var(--duration-base);
+
+  // btn hover時、opacityを1にする
+  @include g.mq() {
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.top-voice__btn-arrow--prev {
+  @include g.mq() {
+    transform: scaleX(-1);
+  }
+}
+
+.top-voice__list {
+  border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  margin-top: 36rem;
+
+  @include g.mq() {
+    width: 930rem;
+    margin-top: 0;
+  }
+}
+
+.top-voice__btn {
+  padding-inline: 30rem;
+  margin-top: 36rem;
+
+  @include g.mq() {
+    padding-inline: 0;
+    margin: 90rem auto;
+    width: 350rem;
+  }
+}

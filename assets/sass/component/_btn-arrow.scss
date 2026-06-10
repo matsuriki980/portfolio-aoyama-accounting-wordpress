@@ -1,0 +1,24 @@
+@use "../global" as g;
+@use "../mixin/mixin" as m;
+
+/*!
+ component > btn-arrow
+------------------------------
+*/
+.c-btn-arrow {
+  display: grid;
+  place-items: center;
+  width: 84rem;
+  height: 30rem;
+  border: 1rem solid currentColor;
+  border-radius: 15rem;
+}
+
+.c-btn-arrow__icon {
+  width: 30rem;
+  height: 8rem;
+  display: block;
+  mask-image: url(../img/common/btn_arrow.svg);
+  @include m.mask-img();
+  background-color: currentColor;
+}
