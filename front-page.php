@@ -390,28 +390,28 @@
       <!-- list -->
       <ul class="top-news__list">
         <li class="top-news__item">
-          <article class="c-news__item">
 
-            <a href="/news/detail/" class="c-news__link" aria-label="詳細ページへ">
+          <!-- 通常投稿のデータを取得し反映 -->
+          <?php
+          $news_query = new WP_Query(
+            array(
+              'post_type'      => 'post',
+              'posts_per_page' => 3,
+            )
+          );
 
-              <!-- img -->
-              <div class="c-news__img">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/news/img/news.jpg" width="315" height="210" alt="">
-              </div>
+          if ($news_query->have_posts()) :
+            while ($news_query->have_posts()) :
+              $news_query->the_post();
+          ?>
 
-              <!-- content -->
-              <div class="c-news__content">
-                <div class="c-news__info">
-                  <span class="c-news__category">お知らせ</span>
-                  <time datetime="2026-01-08" class="c-news__date">2026.01.08</time>
-                </div>
+              <?php get_template_part('template-parts/post-loop-news'); ?>
 
-                <h3 class="c-news__title">
-                  ホームページをリニューアルしました
-                </h3>
-              </div>
-            </a>
-          </article>
+          <?php
+            endwhile;
+            wp_reset_postdata();
+          endif;
+          ?>
         </li>
       </ul>
 
