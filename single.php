@@ -48,43 +48,69 @@
         </section>
       </aside>
 
-      <div class="news-detail__article">
+      <?php
 
-        <article class="news-detail__article">
+      if (have_posts()) :
+        while (have_posts()) :
+          the_post();
+      ?>
 
-          <!-- title -->
-          <header class="news-detail__head">
-            <div class="news-detail__info">
-              <span class="news-detail__category">お知らせ</span>
-              <time class="news-detail__date" datetime="2026-01-08">2026.01.08</time>
-            </div>
+          <div class="news__detail__article-wrap">
 
-            <h1 class="news-detail__title">
-              ホームページをリニューアルしました
-            </h1>
-          </header>
+            <article class="news-detail__article">
 
-          <!-- eye-catch -->
-          <figure class="news-detail__article-img">
-            <img src="/aoyama-accounting/frontend/news/img/news.jpg" width="315" height="346" alt="パソコンにデータ入力を行う様子">
-          </figure>
+              <!-- title -->
+              <header class="news-detail__head">
+                <div class="news-detail__info">
+                  <span class="news-detail__category">
+                    <?php
+                    $category = get_the_category();
+                    if (! empty($category)) {
+                      echo esc_html($category[0]->name);
+                    }
+                    ?>
+                  </span>
+                  <time class="news-detail__date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                    <?php echo get_the_date('Y.m.d'); ?>
+                  </time>
+                </div>
 
-          <!-- body -->
-          <div class="news-detail__body">
+                <h1 class="news-detail__title">
+                  <?php the_title(); ?>
+                </h1>
+              </header>
 
-            <p class="news-detail__text">
-              日頃より当事務所をご愛顧いただき、心より御礼申し上げます。
-              この度、お客様により使いやすく、より多くの情報をお届けできるよう、当事務所のWebサイトを全
-              面リニューアルいたしました。
-              新しいWebサイトでは、税務・会計に関する最新情報や経営のヒントとなるお知らせを更新してまい
-              ります。また、事務所スタッフの紹介ページも充実させ、より身近な存在として感じていただけるよ
-              う工夫を重ねました。
-              引き続き、皆様のビジネスパートナーとして精進してまいりますので、今後ともご指導ご鞭撻のほ
-              ど、よろしくお願い申し上げます。
-            </p>
+              <!-- eye-catch -->
+              <figure class="news-detail__article-img">
+                <?php
+                if (has_post_thumbnail()) {
+                  the_post_thumbnail(
+                    'large',
+                    array(
+                      'width'  => 315,
+                      'height' => 210,
+                      'alt'    => get_the_title(),
+                    )
+                  );
+                }
+                ?>
+              </figure>
 
-          </div>
-        </article>
+              <!-- body -->
+              <div class="news-detail__body">
+
+
+                <div class="news-detail__text">
+                  <?php the_content(); ?>
+                </div>
+
+              </div>
+            </article>
+
+        <?php
+        endwhile;
+      endif;
+        ?>
 
         <!-- btn -->
         <div class="news-detail__btn">
@@ -96,7 +122,7 @@
             </span>
           </a>
         </div>
-      </div>
+          </div>
     </div>
   </section>
 </main>
