@@ -22,47 +22,8 @@
   <section class="news js-header-trigger">
     <div class="news__inner">
 
-      <!-- side var -->
-      <aside class="l-sidebar">
-        <section class="l-sidebar__section">
-          <h2 class="l-sidebar__title">Category</h2>
-
-          <ul class="l-sidebar__list">
-            <li class="l-sidebar__item">
-              <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>" class="l-sidebar__link">
-                <span class="l-sidebar__label">すべて</span>
-                <span class="l-sidebar__count">(52)</span>
-              </a>
-            </li>
-
-            <li class="l-sidebar__item">
-              <a href="#" class="l-sidebar__link">
-                <span class="l-sidebar__label">お知らせ</span>
-                <span class="l-sidebar__count">(23)</span>
-              </a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="l-sidebar__section">
-          <h2 class="l-sidebar__title">Archive</h2>
-
-          <ul class="l-sidebar__list">
-            <li class="l-sidebar__item">
-              <a href="#" class="l-sidebar__link">
-                <span class="l-sidebar__label">2026年</span>
-                <span class="l-sidebar__count">(10)</span>
-              </a>
-            </li>
-            <li class="l-sidebar__item">
-              <a href="#" class="l-sidebar__link">
-                <span class="l-sidebar__label">2025年</span>
-                <span class="l-sidebar__count">(10)</span>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </aside>
+      <!-- side bar -->
+      <?php get_template_part('template-parts/news-sidebar'); ?>
 
       <!-- list -->
       <div class="news__list-wrap">

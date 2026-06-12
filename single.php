@@ -10,44 +10,10 @@
     <div class="news-detail__inner">
 
       <!-- side bar -->
-      <aside class="l-sidebar js-header-trigger">
+      <?php get_template_part('template-parts/news-sidebar'); ?>
 
-        <h2 class="news-detail__sidebar-title">news</h2>
 
-        <section class="l-sidebar__section news-detail__sidebar__section">
-          <h2 class="l-sidebar__title">Category</h2>
-
-          <ul class="l-sidebar__list">
-            <li class="l-sidebar__item">
-              <a href="#" class="l-sidebar__link">
-                <span class="l-sidebar__label">すべて</span>
-                <span class="l-sidebar__count">(52)</span>
-              </a>
-            </li>
-
-            <li class="l-sidebar__item">
-              <a href="#" class="l-sidebar__link">
-                <span class="l-sidebar__label">お知らせ</span>
-                <span class="l-sidebar__count">(23)</span>
-              </a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="l-sidebar__section">
-          <h2 class="l-sidebar__title">Archive</h2>
-
-          <ul class="l-sidebar__list">
-            <li class="l-sidebar__item">
-              <a href="#" class="l-sidebar__link">
-                <span class="l-sidebar__label">2026年</span>
-                <span class="l-sidebar__count">(10)</span>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </aside>
-
+      <!-- article -->
       <?php
 
       if (have_posts()) :
@@ -55,7 +21,7 @@
           the_post();
       ?>
 
-          <div class="news__detail__article-wrap">
+          <div class="news__detail__-wrap">
 
             <article class="news-detail__article">
 
