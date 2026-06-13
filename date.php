@@ -28,29 +28,7 @@
       <!-- list -->
       <div class="news__list-wrap">
         <ul class="c-news__list news__list">
-          <li class="news__item">
-            <article class="c-news__item">
-              <a href="/aoyama-accounting/frontend/news/detail/" class="c-news__link" aria-label="詳細ページへ">
-
-                <!-- img -->
-                <div class="c-news__img">
-                  <img src="/aoyama-accounting/frontend/news/img/news.jpg" width="315" height="210" alt="">
-                </div>
-
-                <!-- content -->
-                <div class="c-news__content">
-                  <div class="c-news__info">
-                    <span class="c-news__category">お知らせ</span>
-                    <time datetime="2026-01-08" class="c-news__date">2026.01.08</time>
-                  </div>
-
-                  <h2 class="c-news__title">
-                    ホームページをリニューアルしました
-                  </h2>
-                </div>
-              </a>
-            </article>
-          </li>
+          <?php get_template_part('template-parts/post-loop-news'); ?>
         </ul>
 
         <!-- pagination-btn -->

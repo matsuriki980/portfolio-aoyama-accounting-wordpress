@@ -28,20 +28,7 @@
       <!-- list -->
       <div class="news__list-wrap">
         <ul class="c-news__list news__list">
-          <li class="news__item">
-            <?php
-            if (have_posts()) :
-              while (have_posts()) :
-                the_post();
-            ?>
-
-                <?php get_template_part('template-parts/post-loop-news'); ?>
-
-            <?php
-              endwhile;
-            endif;
-            ?>
-          </li>
+            <?php get_template_part('template-parts/post-loop-news'); ?>
         </ul>
 
         <!-- pagination-btn -->
