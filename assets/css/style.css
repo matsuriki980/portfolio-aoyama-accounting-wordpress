@@ -574,12 +574,11 @@ body {
   component > news-item
 ------------------------------
 */
-.c-news__list {
-  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
-}
-
 .c-news__item {
   border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+}
+.c-news__item:first-of-type {
+  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
 }
 
 .c-news__link {
@@ -662,6 +661,11 @@ body {
   font-size: 18rem;
   line-height: 1.3888888889;
   letter-spacing: 0.06em;
+}
+
+.c-news-item-not-post {
+  border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  padding-bottom: 12rem;
 }
 
 /*!
@@ -1401,7 +1405,7 @@ body.is-drawer-open {
   margin-top: 20rem;
   display: flex;
   flex-direction: column;
-  gap: 20rem;
+  gap: 12rem;
 }
 
 .l-sidebar__item {
@@ -2755,7 +2759,6 @@ body.is-drawer-open {
 
 .top-news__list {
   margin-top: 40rem;
-  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
 }
 @media screen and (min-width: 900px) {
   .top-news__list {

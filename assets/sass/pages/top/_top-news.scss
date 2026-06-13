@@ -35,9 +35,6 @@
 .top-news__list {
   margin-top: 40rem;
 
-  // 1つめのitemのみ上の線を配置
-  border-top: 1px solid color-mix(in srgb, currentColor 25%, transparent);
-
  @include g.mq() {
     margin-top: 0;
  }

@@ -389,30 +389,7 @@
 
       <!-- list -->
       <ul class="top-news__list">
-        <li class="top-news__item">
-
-          <!-- 通常投稿のデータを取得し反映 -->
-          <?php
-          $news_query = new WP_Query(
-            array(
-              'post_type'      => 'post',
-              'posts_per_page' => 3,
-            )
-          );
-
-          if ($news_query->have_posts()) :
-            while ($news_query->have_posts()) :
-              $news_query->the_post();
-          ?>
-
               <?php get_template_part('template-parts/post-loop-news'); ?>
-
-          <?php
-            endwhile;
-            wp_reset_postdata();
-          endif;
-          ?>
-        </li>
       </ul>
 
       <!-- btn -->
