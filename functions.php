@@ -80,3 +80,25 @@ add_action(
   'after_setup_theme',
   'my_theme_setup'
 );
+
+/**
+ * WP-PageNavi のページ番号を 01, 02, ..., 09, 10 の形式にする
+ */
+add_filter('wp_pagenavi', 'custom_wp_pagenavi_zero_padding');
+
+function custom_wp_pagenavi_zero_padding($html)
+{
+  return preg_replace_callback(
+    '/(<(?:a|span)[^>]*class=["\'][^"\']*(?:page|current|smaller|larger)[^"\']*["\'][^>]*>)(\d+)(<\/(?:a|span)>)/',
+    function ($matches) {
+      $number = (int) $matches[2];
+
+      if ($number >= 1 && $number <= 9) {
+        $number = '0' . $number;
+      }
+
+      return $matches[1] . $number . $matches[3];
+    },
+    $html
+  );
+}
