@@ -28,15 +28,11 @@
       <!-- list -->
       <div class="news__list-wrap">
         <ul class="c-news__list news__list">
-            <?php get_template_part('template-parts/post-loop-news'); ?>
+          <?php get_template_part('template-parts/post-loop-news'); ?>
         </ul>
 
-        <!-- pagination-btn -->
-        <div class="c-pagination__btn-wrap news__pagination-btn-wrap">
-          <button class="c-pagination__btn news__pagination-btn active">
-            01
-          </button>
-        </div>
+        <!-- pagination -->
+        <?php get_template_part('template-parts/pagination'); ?>
       </div>
     </div>
   </section>

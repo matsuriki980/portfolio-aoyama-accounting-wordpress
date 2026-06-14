@@ -735,34 +735,40 @@ body {
  component > pagination
 ------------------------------
 */
-.c-pagination__btn-wrap {
+.wp-pagenavi {
   display: flex;
   justify-content: center;
   gap: 10rem;
+  margin-top: 40rem;
 }
-
-.c-pagination__btn {
+.wp-pagenavi .page.smaller,
+.wp-pagenavi .page.larger,
+.wp-pagenavi .current {
   display: grid;
   place-items: center;
   width: 50rem;
   aspect-ratio: 1/1;
   border: 1px solid currentColor;
   border-radius: 50%;
-  opacity: 0.4;
-  transition: opacity var(--duration-base);
   font-size: 18rem;
   line-height: 1;
   letter-spacing: -0.05em;
   font-family: var(--font-family-en);
   font-weight: 200;
 }
-.c-pagination__btn:hover {
+.wp-pagenavi .page.smaller,
+.wp-pagenavi .page.larger {
+  opacity: 0.4;
+  transition: opacity var(--duration-base);
+}
+.wp-pagenavi .page.smaller:hover,
+.wp-pagenavi .page.larger:hover {
   opacity: 1;
 }
-.c-pagination__btn.active {
+.wp-pagenavi .current {
+  background-color: var(--color-bg-primary);
+  color: var(--color-white);
   opacity: 1;
-  pointer-events: none;
-  cursor: default;
 }
 
 /*!
@@ -4046,15 +4052,6 @@ body.is-drawer-open {
   .news__list-wrap {
     margin-top: 24rem;
   }
-}
-
-.news__pagination-btn-wrap {
-  margin-top: 40rem;
-}
-
-.news__pagination-btn.active {
-  background-color: var(--color-bg-primary);
-  color: var(--color-white);
 }
 
 /*!
